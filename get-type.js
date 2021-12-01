@@ -3,9 +3,11 @@ function getType(value) {
 
     if (typeof value === 'object') {
         let objectTypeString = Object.prototype.toString.call(value);
-        let arr = objectTypeString.split(' ')[1].split('');
-        arr.pop();
-        return arr.join('').toLowerCase();
+        // let arr = objectTypeString.split(' ')[1].split('');
+        // arr.pop();
+        // return arr.join('').toLowerCase();
+        let reg = /\[object (\w+)]/;
+        return objectTypeString.match(reg)[1].toLowerCase();
     }
     return typeof value;
 }
