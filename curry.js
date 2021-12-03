@@ -1,6 +1,6 @@
 function curry(fn, ...args) {
     let fnLen = fn.length;
-    args = [...args] || [];
+    args = [...args];
     return function() {
         let _args = [...args, ...arguments]
 
